@@ -16,7 +16,7 @@
 <script>
   $(document).ready(function() {
     $("button").addClass("animated bounce");
-    $(".well").addClaAll jQuery code you write will be wrapped in the above code. jQuery will detect this state of readiness so that code included inside this function will only run once the DOM is ready for JavaScript code to execute. ss("animated shake");
+    $(".well").addClass("animated shake");
     $("#target3").addClass("animated fadeOut");
     $("button").removeClass("btn-default");
 </script>
