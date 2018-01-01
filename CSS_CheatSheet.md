@@ -165,6 +165,7 @@ h2 {
 - Clockwise Notation : <br>
     `padding: top right bottom left` <br>
     `padding: 10px 20px 10px 20px;`
+
 ### CSS Margin
 - An element's margin controls the amount of space between an element's border and surrounding elements.
 - If you set an element's margin to a negative value, the element will grow larger.
@@ -192,10 +193,11 @@ h2 {
 ` <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> `
 
 - Types of div:
-    - `Class` Container : will have padding up to max width
+    - `Class` Container fixed-width : will have padding up to max width
     - `Class` Container-fluid : will fill up space to max width
+    - `Class` Container responsive
 
-- Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a div element.
+- Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a div element.</br>
     `<div class="container-fluid">`
 
 - Uses rows & columns to control layout.
