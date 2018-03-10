@@ -7,6 +7,21 @@
     - Internal - by using a style element in the head section
     - External - by using an external CSS file
 
+# CSS Preprocessors
+- CSS Preprocessors compiles processed language into plain CSS code.
+- Adds syntax such as variables, mixins, functions to reduce code duplication.
+- Examples:
+    - <a href="http://sass-lang.com/">Sass</a>
+    - <a href="http://lesscss.org/">Less</a>
+    - <a href="http://stylus-lang.com/">Stylus</a>
+
+# CSS Frameworks
+- Lots of available frameworks
+    - <a href="http://getbootstrap.com/">Bootstrap</a>
+    - <a href="https://html5boilerplate.com/">HTML5 Boilerplate</a>
+    - <a href="http://getskeleton.com/">Skeleton</a>
+
+
 ## Inline Style
 - An inline CSS is used to apply a unique style to a single HTML element.
 - An inline CSS uses the style attribute of an HTML element.
@@ -187,6 +202,127 @@ h2 {
     margin-left: 40px;
   }
 ```
+
+### CSS Position
+> Boxes in the normal flow belong to a formatting context, which may be block or inline, but not both simultaneously. Block boxes participate in a block formatting context. Inline boxes participate in an inline formatting context
+> Normal flow as a law similar to the law of gravity. The normal flow of the document is how your elements stack one on top of each other, from the top down, in the order in which they appear in your markup.
+
+- block formatting : same column, different rows
+- inline formatting: same row, different column
+- Child elements will behave as inline formatting context and will not stack up on top of each other. Will be stacked inline (ie same row, different column)
+[http://www.barelyfitz.com/screencast/html-training/css/positioning]
+- Allows up to 5 values
+```
+div {
+  position: static; /* default */
+  position: relative;
+  position: absolute;
+  position: fixed;
+  position: sticky;
+  position: inherit; /* Not very common */
+}
+```
+##### Static
+- By default in default position. Only specified to forcefully remove positioning that is applied to an element outside your control.
+- For simple, single-column layouts where each elements sits on top of the next one.
+```
+#div-1 {
+ position:static;
+}
+```
+
+##### Relative
+- Move position relative to top/bottom/right/left to where it would initially normally be at.
+- For multiple elements within elements, the child element will position itself relative to the position of its parent element.
+- Code below moves the div down by 20pixels, left 40pixels
+- After re-positioning the element, the original position would still be occupied with the element (although not visible- will have a blank space). Other elements in the page will not move into the original (blank space) position and just remain in its position
+```
+#div-1 {
+ position:relative;
+ top:20px;
+ left:-40px;
+}
+```
+
+##### Absolute
+- Absolute element is removed from the normal flow (won’t affect or be affected by any other element in the flow - doesn't need to follow any columns or rows stacking)
+- Element is removed from initial position and <u>moved</u> to specified absolute position. Other elements on the page will re-positioned into the removed initial position that is now empty.
+```
+#div-1a {
+ position:absolute;
+ top:0;
+ right:0;
+ width:200px;
+}
+```
+
+###### Relative + Absolute
+- Used when multiple elements exists within elements and needs to be position in respect to a <u>relative</u> element.
+- div-1 element positioned as relative to div-1. Absoulte position of div-1a will be absolute with respect to div-1. Div-1a will only re-position to <u>within</u> div-1 boundaries.
+```
+#div-1 {
+ position:relative;
+}
+#div-1a {
+ position:absolute;
+ top:0;
+ right:0;
+ width:200px;
+}
+```
+
+###### Columns absolute
+- Multiple column layout using relative and absolute positioning.
+- Absolute position doesn't take in account the order that elements were defined in HTML. Althought div-1a was defined before div-1b, but div-1b has left:0 causing it to appear before (on the left) of div-1a
+```
+#div-1 {
+ position:relative;
+}
+#div-1a {
+ position:absolute;
+ top:0;
+ right:0;
+ width:200px;
+}
+#div-1b {
+ position:absolute;
+ top:0;
+ left:0;
+ width:200px;
+}
+```
+
+###### Float
+- Pushes an element as far as possible to right / left and allow text to wrap around.
+```
+#div-1a {
+ float:left;
+ width:200px;
+}
+```
+
+###### Clear
+- Clears the position and causes all other elements to re-position
+- This example clears both floats and pushes the rest of the content down the page
+```
+#div-1a {
+ float:left;
+ width:190px;
+}
+#div-1b {
+ float:left;
+ width:190px;
+}
+#div-1c {
+ clear:both;
+}
+```
+
+##### Fixed
+
+
+
+
 
 ## <b><u>Bootstrap</b></u>
 - To use bootstrap, add the following : </br>

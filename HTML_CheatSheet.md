@@ -1,6 +1,21 @@
 # HTML Cheat Sheet
 <!-- HTML Cheat Sheet -->
 
+## Table of Contents
+#### HTML
+- [HTML Basics](#html-basics)
+- [The Whole Picture](#the-whole-picture)
+- [HTML Attributes](#html-attributes)
+- [HTML Elements](#html-elements)
+- [HTML Formatting](#html-formatting)
+- [Input Controls](#input-controls)
+
+#### Javascript
+- [Javascript Basics](#javascript-basics)
+- [Head section](#head-section)
+- [Body section](#body-section)
+- [Load External Script](#load-external-script)
+
 ## HTML Basics
 
 ### HTML Barebones Structure
@@ -61,20 +76,20 @@
 
     </html>
     ```
-#### HTML Elements
+
+### HTML Attributes
+- All HTML elements can have attributes
+- Attributes provide additional information about an element
+- Attributes usually come in name/value pairs like: name="value"
+
+### HTML Elements
 - An HTML element usually consists of a start tag and end tag, with the content inserted in between:
 
     ```<tagname>Content goes here...</tagname>```
 
 - In-line styles can be used on any html elements
 
-#### HTML Attributes
-- All HTML elements can have attributes
-- Attributes provide additional information about an element
-- Attributes usually come in name/value pairs like: name="value"
-
-
-#### The `<div>` Element
+##### The DIV Element
 - The `<div>` element is often used as a container for other HTML elements.
 - The `<div>` element has no required attributes, but both style and class are common.
 - When used together with CSS, the `<div>` element can be used to style blocks of content:
@@ -90,7 +105,7 @@
 </div>
 ```
 
-#### The `<span>` Element
+##### The SPAN Element
 - The `<span>` element is often used as a container for some text.
 - The `<span>` element has no required attributes, but both style and class are common.
 - When used together with CSS, the `<span>` element can be used to style parts of the text:
@@ -103,13 +118,14 @@
 - <u>highlight:</u>
     <p>HTML <mark>Marked</mark> Formatting</p>
 
-    `<p>HTML <mark>Mar<h1 style="color:blue;">This is a Blue Heading</h1>ked</mark> Formatting</p>`
+    ```
+    <p>HTML <mark>Mar<h1 style="color:blue;">This is a Blue Heading</h1>ked</mark> Formatting</p>
+    ```
 
 - <u>strikethru</u>:
     <p>My favorite color is <del>blue</del> red.</p>
 
-    `<p>My favorite color is <del>blue</del> red.</p>`
-
+    ```<p>My favorite color is <del>blue</del> red.</p>```
 
 - <u>underline:</u>
     <p>My favorite <ins>color</ins> is red.</p>
@@ -156,8 +172,7 @@
 
     `<p>Here's a <a href="http://freecodecamp.org"> link to Free Code Camp</a> for you to follow.</p>`
 
-    - Make Dead Links using the Hash Symbol
-(Sometimes you want to add a elements to your website before you know where they will link.)
+    - Make Dead Links using the Hash Symbol (Sometimes you want to add a elements to your website before you know where they will link.)
 
     ` <p>Click here for <a href=#>cat photos</a>.</p> `
 
@@ -183,7 +198,7 @@
     ```
 
 
-### <b><u>Input</b></u>
+### <b><u>Input Controls</b></u>
 #### Text input field:<br>
 - To make a text input field required, add the word required within your input element: <br>
     `<input type="text" required>`
@@ -239,7 +254,7 @@
     ```
 
 ## <b><u>Javascript</u></b>
-### Basics
+### Javascript Basics
 - The `<script>` tag is used to define a client-side script and either contains scripting statements, or it points to an external script file through the src attribute.
 
     ```
@@ -313,6 +328,8 @@
 </html>
 ```
 
+#### More References
+- https://github.com/dypsilon/frontend-dev-bookmarks/blob/master/workflow/javascript-tools.md
 
 
 
