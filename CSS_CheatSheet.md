@@ -1,11 +1,64 @@
 # CSS Cheat Sheet
 <!-- CSS Cheat Sheet -->
 
+Table of Contents
+=================
+
+   * [CSS Cheat Sheet](#css-cheat-sheet)
+   * [CSS Workflow](#css-workflow)
+         * [Block-level](#block-level)
+         * [Inline-level](#inline-level)
+   * [CSS Preprocessors](#css-preprocessors)
+   * [CSS Frameworks](#css-frameworks)
+   * [CSS Styles](#css-styles)
+      * [Inline Style](#inline-style)
+      * [Internal CSS](#internal-css)
+      * [External CSS](#external-css)
+      * [CSS Classes](#css-classes)
+      * [CSS Id Attributes](#css-id-attributes)
+      * [CSS Fonts](#css-fonts)
+      * [CSS Border](#css-border)
+      * [CSS Padding](#css-padding)
+      * [CSS Margin](#css-margin)
+      * [CSS Display](#css-display)
+      * [CSS Position](#css-position)
+            * [Static](#static)
+            * [Relative](#relative)
+            * [Absolute](#absolute)
+               * [Relative   Absolute](#relative--absolute)
+               * [Columns absolute](#columns-absolute)
+               * [Float](#float)
+               * [Clear](#clear)
+            * [Fixed](#fixed)
+            * [Inherit](#inherit)
+
+
 # CSS
 - CSS can be added to HTML elements in 3 ways:
     - Inline - by using the style attribute in HTML elements
     - Internal - by using a style element in the head section
     - External - by using an external CSS file
+
+# CSS Workflow
+- In CSS, everything is a box, either block-level box or inline-level box.
+
+>
+- Block Level  : same column, different rows
+- Inline Level : same row, different column
+>
+
+- Child elements will behave as inline formatting context and will not stack up on top of each other. Will be stacked inline (ie same row, different column)
+
+### Block-level
+- `<p>` / `<section>` / `<div>` / `<h1>` / `<tr>`
+- Rendered vertically according to their source order (except tables)
+- Normal flow : Expand to fill available width of its containing element.
+
+### Inline-level
+- `<span>` / `<em>` / `<b>`
+- Do not form new blocks of content. These boxes make up the lines inside a block box.
+- Displayed horizontally and fill the width of containing box, wrapping across lines.
+
 
 # CSS Preprocessors
 - CSS Preprocessors compiles processed language into plain CSS code.
@@ -21,7 +74,7 @@
     - <a href="https://html5boilerplate.com/">HTML5 Boilerplate</a>
     - <a href="http://getskeleton.com/">Skeleton</a>
 
-
+# CSS Styles
 ## Inline Style
 - An inline CSS is used to apply a unique style to a single HTML element.
 - An inline CSS uses the style attribute of an HTML element.
@@ -94,7 +147,6 @@
 ```
 
 
-
 ## CSS Id Attributes
 - To define a specific style for one special element then define a style for the element using  `#`
 - Id attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice.
@@ -116,8 +168,12 @@
 
 </head>
 ```
+## CSS Grid
+- Provides a mechanism for authors to divide available space for lay out into columns and rows using a set of predictable sizing behaviors.
+- https://css-tricks.com/snippets/css/complete-guide-grid/
 
-### CSS Fonts
+
+## CSS Fonts
 - Properties:
     - color
     - font-family
@@ -148,7 +204,7 @@
 </html>
 ```
 
-### CSS Border
+## CSS Border
 - The CSS border property defines a border around an HTML element:
 ```
 p {
@@ -157,7 +213,7 @@ p {
 
 ```
 
-### CSS Padding
+## CSS Padding
 - An element's padding controls the amount of space between the element and its border.
 - Able to control the padding of an element on all four sides with padding-top, padding-right, padding-bottom, and padding-left properties.
 - Clockwise Notation : <br>
@@ -181,7 +237,7 @@ h2 {
     `padding: top right bottom left` <br>
     `padding: 10px 20px 10px 20px;`
 
-### CSS Margin
+## CSS Margin
 - An element's margin controls the amount of space between an element's border and surrounding elements.
 - If you set an element's margin to a negative value, the element will grow larger.
 - Able to control the margin of an element on all four sides with margin-top, margin-right, margin-bottom, and margin-left properties.
@@ -203,13 +259,36 @@ h2 {
   }
 ```
 
-### CSS Position
+## CSS Display
+- Display property determines box behavior
+```
+div {
+	display: inline;
+	display: inline-block;
+	display: block;
+	display: run-in;
+	display: none;
+}
+```
+```
+div {
+  display: table;
+  display: inline-table; /* like a table inside an inline-block */
+  display: table-cell;
+  display: table-column;
+  display: table-colgroup;
+  display: table-header-group;
+  display: table-row-group;
+  display: table-footer-group;
+  display: table-row;
+  display: table-caption;
+}
+```
+
+## CSS Position
 > Boxes in the normal flow belong to a formatting context, which may be block or inline, but not both simultaneously. Block boxes participate in a block formatting context. Inline boxes participate in an inline formatting context
 > Normal flow as a law similar to the law of gravity. The normal flow of the document is how your elements stack one on top of each other, from the top down, in the order in which they appear in your markup.
 
-- block formatting : same column, different rows
-- inline formatting: same row, different column
-- Child elements will behave as inline formatting context and will not stack up on top of each other. Will be stacked inline (ie same row, different column)
 [http://www.barelyfitz.com/screencast/html-training/css/positioning]
 - Allows up to 5 values
 ```
@@ -222,7 +301,7 @@ div {
   position: inherit; /* Not very common */
 }
 ```
-##### Static
+#### Static
 - By default in default position. Only specified to forcefully remove positioning that is applied to an element outside your control.
 - For simple, single-column layouts where each elements sits on top of the next one.
 ```
@@ -231,7 +310,7 @@ div {
 }
 ```
 
-##### Relative
+#### Relative
 - Move position relative to top/bottom/right/left to where it would initially normally be at.
 - For multiple elements within elements, the child element will position itself relative to the position of its parent element.
 - Code below moves the div down by 20pixels, left 40pixels
@@ -244,7 +323,7 @@ div {
 }
 ```
 
-##### Absolute
+#### Absolute
 - Absolute element is removed from the normal flow (won’t affect or be affected by any other element in the flow - doesn't need to follow any columns or rows stacking)
 - Element is removed from initial position and <u>moved</u> to specified absolute position. Other elements on the page will re-positioned into the removed initial position that is now empty.
 ```
@@ -256,7 +335,7 @@ div {
 }
 ```
 
-###### Relative + Absolute
+##### Relative + Absolute
 - Used when multiple elements exists within elements and needs to be position in respect to a <u>relative</u> element.
 - div-1 element positioned as relative to div-1. Absoulte position of div-1a will be absolute with respect to div-1. Div-1a will only re-position to <u>within</u> div-1 boundaries.
 ```
@@ -271,7 +350,7 @@ div {
 }
 ```
 
-###### Columns absolute
+##### Columns absolute
 - Multiple column layout using relative and absolute positioning.
 - Absolute position doesn't take in account the order that elements were defined in HTML. Althought div-1a was defined before div-1b, but div-1b has left:0 causing it to appear before (on the left) of div-1a
 ```
@@ -292,7 +371,7 @@ div {
 }
 ```
 
-###### Float
+##### Float
 - Pushes an element as far as possible to right / left and allow text to wrap around.
 ```
 #div-1a {
@@ -301,7 +380,7 @@ div {
 }
 ```
 
-###### Clear
+##### Clear
 - Clears the position and causes all other elements to re-position
 - This example clears both floats and pushes the rest of the content down the page
 ```
@@ -318,53 +397,26 @@ div {
 }
 ```
 
-##### Fixed
-
-
-
-
-
-## <b><u>Bootstrap</b></u>
-- To use bootstrap, add the following : </br>
-` <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> `
-
-- Types of div:
-    - `Class` Container fixed-width : will have padding up to max width
-    - `Class` Container-fluid : will fill up space to max width
-    - `Class` Container responsive
-
-- Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a div element.</br>
-    `<div class="container-fluid">`
-
-- Uses rows & columns to control layout.
-- Max columns is 12 in a single row. If no of columns > 12, the 13th item will appear below.
-
-- For debugging, use a container well to see dimension
-` <div class="well"></div>`
-
+#### Fixed
+- Fixed element that does not scroll with the page.
+- Shares all rules of an `absolute` position and can stretch the width of element to fit entire page.
+- Older browsers (IE) renders `fixed` elements as `static`.
 ```
-  <div class="row">
-    <div class="col-xs-8">
-      <h2 class="text-center">CatPhotoApp</h2>
-    </div>
-    <div class="col-xs-4">
-      <img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back. ">
-    </div>
-  </div>
+#box_2 {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
 ```
 
-### Bootstrap Font Awesome</br>
-- Include Bootstrap lib : </br>
-` <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>`
+#### Inherit
+- Inherits value of its parents' values (default is the `static` value)
 
-#### Icon
-- Add the Font Awesome classes to the i element to turn it into an icon, for example:</br>
-` <i class="fa fa-info-circle"></i> `
 
-```
-<div class="col-xs-4">
-    <button class="btn btn-block btn-primary">
-    <i class="fa fa-thumbs-up">Like</i>
-    </button>
-</div>
-```
+https://github.com/vasanthk/css-refresher-notes#floats
+## CSS Floats
+https://designshack.net/articles/css/everything-you-never-knew-about-css-floats/
+http://alistapart.com/article/css-floats-101
+
+## CSS Selectors
