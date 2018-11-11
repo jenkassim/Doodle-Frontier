@@ -1,7 +1,7 @@
 # CSS Cheat Sheet
 <!-- CSS Cheat Sheet -->
 
-Table of Contents
+# Table of Contents
 =================
 
    * [CSS Cheat Sheet](#css-cheat-sheet)
@@ -73,6 +73,8 @@ Table of Contents
     - <a href="http://getbootstrap.com/">Bootstrap</a>
     - <a href="https://html5boilerplate.com/">HTML5 Boilerplate</a>
     - <a href="http://getskeleton.com/">Skeleton</a>
+
+[^](#table-of-contents)
 
 # CSS Styles
 ## Inline Style
