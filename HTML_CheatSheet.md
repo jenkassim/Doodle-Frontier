@@ -4,12 +4,18 @@
 ## Table of Contents
 # HTML
 - [HTML Basics](#html-basics)
-- [The Big Picture](#the-big-picture)
+    - [The Big Picture](#the-big-picture)
+    - [HTML Barebones Structure](#html-barebones-structure)
 - [HTML Attributes](#html-attributes)
-- [HTML Elements](#html-elements)
-- [HTML Formatting](#html-formatting)
-- [Input Controls](#input-controls)
-
+    - [HTML Input Types](#html-input-types)
+        - [Text Field](#text-field)
+        - [Radio Button](#radio-button)
+        - [Checked Box](#checked-box)
+        - [Color Selection](#color-selection)
+        - [Form Element](#form-element)
+    - [Forms & Validations](#forms-&-validations)
+    - [Labels](#labels)
+    - [Forms & Selections](#forms-&-selections)
 
 ## HTML Basics
 ### The Big Picture
@@ -67,6 +73,7 @@
 ```html
 <h1>My <span style="color:red">Important</span> Heading</h1>
 ```
+[^](#table-of-contents)
 
 ## HTML Attributes
 - All HTML elements can have attributes
@@ -91,13 +98,14 @@
 | Table Row | `<table><tr><td>R1C1</td></tr><tr><td>R2C1</td></tr></table>` | <table><tr><td>R1C1</td></tr><tr><td>R2C1</td></tr></table> |
 | Anchor element | `Here's a <a href="#"> link </a>` </br> Make dead link using the Hash Symbol. For when link is unknown | Here's a <a href="#"> link </a>|
 | Iframe | Display webpage within webpage </br> `<iframe src="demo.htm" height="35" width="35"></iframe>`| <iframe src="demo.htm" height="35" width="35"></iframe>|
+[^](#table-of-contents)
 
 ### HTML Input Types
 - Mozilla reference <a href="
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"> sheet</a>
 - W3School reference <a href="https://www.w3schools.com/TAGs/att_input_type.asp">sheet </a>
 
-#### Text input field
+#### Text Field
 - To make a text input field required, add the word required within your input element:
 
     <input type="password" value="1234">
@@ -147,8 +155,9 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"> sheet</a>
     ```html
     <input type="color" name="" value="#FFFF00">
     ```
+[^](#table-of-contents)
 
-#### Form Element
+### Forms & Validations
 - Sends the data from your form to the URL you specified with your form's action attribute.
 
     <form action="index.html" method="post">
@@ -167,7 +176,6 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"> sheet</a>
         <button type="submit">Submit</button>
     </form>
     ```
-#### Forms & Validations
 - Validate user input in forms.
     <form action="redirect-link.htm" method="get">
         <input type="email" name="useremail" value="">
@@ -186,10 +194,11 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"> sheet</a>
 - If form has no `action` attributes, the value reflected in the URL in format : `index.html?useremail=<email-addr-input>`.
 - If form has `action` attributes, when submit button is clicked, the webpage will take the action to redirect to another page. URL reflected in new page: `redirect-link.html/useremail=<email-addr-input>`.
 
-#### Labels
+[^](#table-of-contents)
+
+### Labels
 - Label to assign names to specific input types
 - Alternative method to group blocks elements together
-
     <form>
         <label>
             Enter Text:
@@ -219,8 +228,9 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"> sheet</a>
             <input id="userinput" type="text" name="" placeholder="Hello">
         </form>
     ```
+[^](#table-of-contents)
 
-#### Forms & Selections
+### Forms & Selections
 ##### Radio button
 - For Radio button, options need to have the same name to be able to select only one from the same name
 
@@ -272,3 +282,4 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"> sheet</a>
             <textarea name="descr" rows="3" cols="30"></textarea>
         </form>
     ```
+[^](#table-of-contents)
