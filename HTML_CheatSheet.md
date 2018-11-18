@@ -10,11 +10,6 @@
 - [HTML Formatting](#html-formatting)
 - [Input Controls](#input-controls)
 
-#### Javascript
-- [Javascript Basics](#javascript-basics)
-- [Head section](#head-section)
-- [Body section](#body-section)
-- [Load External Script](#load-external-script)
 
 ## HTML Basics
 ### The Big Picture
@@ -35,6 +30,7 @@
 
         <!-- Header with any custom css stylesheet -->
         <head>
+            <meta charset="utf-8">
             <title>Basic WebPage Structure</title>
             <link rel="stylesheet" href="css/style.css">
         </head>
@@ -171,32 +167,108 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"> sheet</a>
         <button type="submit">Submit</button>
     </form>
     ```
-#### Forms and Validations
+#### Forms & Validations
 - Validate user input in forms.
     <form action="redirect-link.htm" method="get">
         <input type="email" name="useremail" value="">
-        <input type="submit" name="" value="Submit">
+        <input type="submit" name="" value="Click Me!">
     </form>
 
     ```html
     <form action="redirect-link.htm" method="get">
         <input type="email" name="useremail" value="">
-        <input type="submit" name="" value="Submit">
+        <input type="submit" name="" value="Click Me!">
     </form>
     ```
 
-- When Submit button is clicked, the value entered will be reflected in the URL.
+- When Submit button is clicked, the value entered will be reflected in the URL in format `<webpage.html>?<input-name>=<input-value>`
+- `Name`/`Value` will only be submitted in URL if input element `name` is defined, otherwise value will be ommitted.
 - If form has no `action` attributes, the value reflected in the URL in format : `index.html?useremail=<email-addr-input>`.
 - If form has `action` attributes, when submit button is clicked, the webpage will take the action to redirect to another page. URL reflected in new page: `redirect-link.html/useremail=<email-addr-input>`.
 
 #### Labels
 - Label to assign names to specific input types
+- Alternative method to group blocks elements together
 
     <form>
-        <input type="email" name="useremail" value="">
-        <input type="submit" name="" value="Submit">
-
+        <label>
+            Enter Text:
+            <input type="text" name="" value="">
+        </label>
     </form>
 
+    ```html
+        <form>
+            <label>
+                Enter Text:
+                <input type="text" name="" value="">
+            </label>
+        </form>
+    ```
 
+- Using label with `for`
+- Used with `id` to group elements
+    <form>
+        <label for="userinput">Enter Input:</label>
+        <input id="userinput" type="text" name="" placeholder="Hello">
+    </form>
 
+    ```html
+        <form>
+            <label for="userinput">Enter Input:</label>
+            <input id="userinput" type="text" name="" placeholder="Hello">
+        </form>
+    ```
+
+#### Forms & Selections
+##### Radio button
+- For Radio button, options need to have the same name to be able to select only one from the same name
+
+    <form method="get">
+        <label for="Opt1">Option 1: </label>
+        <input id="Opt1" type="radio" name="Choose" value"">
+        <label for="Opt2">Option2: </label>
+        <input id="Opt2" type="radio" name="Choose" value="">
+    </form>
+
+    ```html
+    <form method="get">
+        <label for="Opt1">Option 1: </label>
+        <input id="Opt1" type="radio" name="Choose" value"FirstOption">
+
+        <label for="Opt2">Option2: </label>
+        <input id="Opt2" type="radio" name="Choose" value="SecondOption">
+    </form>
+    ```
+
+##### Dropdown List
+- Dropdown list options
+    <form method="get>
+        <select name="Lists">
+            <option value="Item1">1</option>
+            <option value="Item2">2</option>
+            <option value="Item3">3</option>
+        </select>
+    </form>
+
+    ```html
+        <form method="get>
+            <select name="Lists">
+                <option value="Item1">1</option>
+                <option value="Item2">2</option>
+                <option value="Item3">3</option>
+            </select>
+        </form>
+    ```
+
+##### Text Area
+- For long descriptions
+    <form>
+        <textarea name="descr" rows="3" cols="30"></textarea>
+    </form>
+
+    ```html
+        <form>
+            <textarea name="descr" rows="3" cols="30"></textarea>
+        </form>
+    ```
